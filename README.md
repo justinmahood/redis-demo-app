@@ -6,7 +6,11 @@ Redis is used to keep track of the last load of the site and stores the last v
 
 ## Setup
 
-You'll need a running redis instance, and a couple of environment variables setup for your Cloud Run service.
+You'll need:
+
+1. Running redis instance (I'm using the Redis Certified by Bitnami on a GCP VM)
+1. A Serverless VPC Connector
+1. A couple of environment variables setup for your Cloud Run service to reference your redis
 
 | Environment Variable | Example value |
 | -------------------- | ------------- |
