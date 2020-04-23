@@ -24,9 +24,9 @@ class Info:
 @app.route('/')
 def index():
     info = Info()
-    info.lastBrowser = r.get("browser")
-    info.lastVersion = r.get("version")
-    info.currentBrowser = request.user_agent.browser
+    info.lastBrowser = r.get("browser").decode("utf-8").title()
+    info.lastVersion = r.get("version").decode("utf-8")
+    info.currentBrowser = request.user_agent.browser.title()
     info.currentVersion = request.user_agent.version
 
     storeUserAgentValuesInRedis(request.user_agent)

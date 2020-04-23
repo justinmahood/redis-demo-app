@@ -1,22 +1,52 @@
-<!doctype html>
-
-<html lang="en">
+<!DOCTYPE HTML>
+<!--
+	Ethereal by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
 
 <head>
-	<meta charset="utf-8">
-
-	<title>Redis to Cloud Run Example</title>
-	<meta name="description" content="Redis to Cloud Run Example">
-	<meta name="author" content="jbloom">
-
-	<link rel="stylesheet" type="text/css" href="/static/styles.css" />
-
+	<title>Ethereal by HTML5 UP</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="static/css/main.css" />
+	<noscript>
+		<link rel="stylesheet" href="static/css/noscript.css" /></noscript>
 </head>
 
-<body>
-	<p>The last visitor here had a {{info.lastBrowser}} browser with version {{info.lastVersion}}</p>
-	<p>Your {{info.currentBrowser}} browser is version {{info.currentVersion}}</p>
-	<script src="static/scripts.js"></script>
+<body class="is-preload">
+
+	<!-- Page Wrapper -->
+	<div id="page-wrapper">
+
+		<!-- Wrapper -->
+		<div id="wrapper">
+
+			<!-- Panel (Banner) -->
+			<section class="panel banner right">
+				<div class="content color0 span-5-75">
+					<h1 class="major">You're browsing with a <u>{{info.currentBrowser}}</u> browser version
+						{{info.currentVersion}}
+					</h1>
+					<h2>The last visitor had a <u>{{info.lastBrowser}}</u> browser running version {{info.lastVersion}}
+					</h2>
+				</div>
+
+			</section>
+
+
+
+		</div>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="static/js/jquery.min.js"></script>
+	<script src="static/js/browser.min.js"></script>
+	<script src="static/js/breakpoints.min.js"></script>
+	<script src="static/js/main.js"></script>
+
 </body>
 
 </html>
