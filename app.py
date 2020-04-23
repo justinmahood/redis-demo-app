@@ -14,10 +14,7 @@ logging.basicConfig(format='%(message)s', level=logging.INFO)
 
 r = redis.Redis(host=redisHost, db=0, password=redisPassword)
 
-# Empty class as a handy object to store stuff in
-
-
-class Info:
+class Info:  # Empty class as a handy object to store stuff in
     pass
 
 
