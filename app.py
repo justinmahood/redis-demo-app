@@ -4,15 +4,14 @@ import os
 import redis
 from flask import Flask, render_template, request
 
-redisHost = os.getenv('redis_host')
-redisPassword = os.getenv('redis_password')
+redisHost = os.getenv('REDISHOST')
 
 app = Flask(__name__)
 
 # Change the format of messages logged to Stackdriver
 logging.basicConfig(format='%(message)s', level=logging.INFO)
 
-r = redis.Redis(host=redisHost, db=0, password=redisPassword)
+r = redis.Redis(host=redisHost, db=0)
 
 class Info:  # Empty class as a handy object to store stuff in
     pass
@@ -21,8 +20,16 @@ class Info:  # Empty class as a handy object to store stuff in
 @app.route('/')
 def index():
     info = Info()
-    info.lastBrowser = r.get("browser").decode("utf-8").title()
-    info.lastVersion = r.get("version").decode("utf-8")
+    try:
+        info.lastBrowser = r.get("browser").decode("utf-8").title()
+    except:
+        info.lastBrowser = "No browser detected"
+    
+    try:
+        info.lastVersion = r.get("version").decode("utf-8")
+    except:
+        info.lastVersion = "No version detected"
+
     info.currentBrowser = request.user_agent.browser.title()
     info.currentVersion = request.user_agent.version
 
