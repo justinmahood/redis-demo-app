@@ -8,13 +8,12 @@ Redis is used to keep track of the last load of the site and stores the last v
 
 You'll need:
 
-1. Running redis instance (I'm using the Redis Certified by Bitnami on a GCP VM)
-1. A Serverless VPC Connector
-1. A couple of environment variables setup for your Cloud Run service to reference your redis
+1. GCP Memorystore running redis
+1. A Serverless VPC Connector to connect your Cloud Run service to Redis
+1. REDISTHOST environment variable setup for your Cloud Run service to reference your Memorystore Redis
 
 | Environment Variable | Example value |
 | -------------------- | ------------- |
-| redis_host           | 10.10.10.10   |
-| redis_password       | 123456        |
+| REDISHOST           | 10.10.10.10   |
 
 ![Image](https://raw.githubusercontent.com/code128/cloud-run-vpc-redis/master/splash.png)
