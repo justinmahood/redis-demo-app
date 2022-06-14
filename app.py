@@ -11,7 +11,10 @@ app = Flask(__name__)
 # Change the format of messages logged to Stackdriver
 logging.basicConfig(format='%(message)s', level=logging.INFO)
 
-r = redis.Redis(host=redisHost, db=0)
+try:
+  r = redis.Redis(host=redisHost, db=0)
+except:
+  r = None
 
 class Info:  # Empty class as a handy object to store stuff in
     pass
@@ -29,11 +32,16 @@ def index():
         info.lastVersion = r.get("version").decode("utf-8")
     except:
         info.lastVersion = "No version detected"
-
+ 
     info.currentBrowser = request.user_agent.browser.title()
     info.currentVersion = request.user_agent.version
 
-    storeUserAgentValuesInRedis(request.user_agent)
+    try:
+      storeUserAgentValuesInRedis(request.user_agent)
+      info.cacheInfo = "Info from a redis cache located on a VPC: " + redisHost
+    except:
+      info.cacheInfo = "I haz no redis cache :( "
+
     return render_template('index.html', info=info)
 
 
