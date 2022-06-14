@@ -1,5 +1,5 @@
 {
-    "name": "stackredis",
+    "name": "sr",
     "addons": [{
       "plan": "redis"
     }]
