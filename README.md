@@ -1,3 +1,5 @@
+[![Run on Google Cloud](https://deploy.cloud.run/button.svg)](stacks-button-redirect-ean27jt5ha-uc.a.run.app)
+
 # cloud-run-vpc-redis
 
 Example of connecting a Cloud Run service to Redis via a VPC connector
