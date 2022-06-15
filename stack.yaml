@@ -15,5 +15,5 @@ router:
 redis:
 - name: web-redis
   instance: 
-    memory-size-gb: 4
+    memory-size-gb: 5
   
