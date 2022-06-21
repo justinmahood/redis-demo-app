@@ -16,3 +16,13 @@ redis:
   instance: 
     memory-size-gb: 4
   
+scheduler:
+- name: job
+  config:
+    schedule: "* * * *"
+    http-method: POST
+    body: "doesn't matter'
+  resource:
+    ref: service/web
+    path: /
+  
