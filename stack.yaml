@@ -20,8 +20,7 @@ scheduler:
 - name: job
   config:
     schedule: "* * * * *"
-    http-method: POST
-    body: "doesn't matter"
+    http-method: GET
   resource:
     ref: service/web
     path: /
