@@ -21,7 +21,7 @@ scheduler:
   config:
     schedule: "* * * *"
     http-method: POST
-    body: "doesn't matter'
+    body: "doesn't matter"
   resource:
     ref: service/web
     path: /
