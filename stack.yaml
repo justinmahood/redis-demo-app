@@ -19,7 +19,7 @@ redis:
 scheduler:
 - name: job
   config:
-    schedule: "* * * *"
+    schedule: "* * * * *"
     http-method: POST
     body: "doesn't matter"
   resource:
