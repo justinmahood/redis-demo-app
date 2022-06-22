@@ -16,12 +16,3 @@ redis:
   instance: 
     memory-size-gb: 4
   
-scheduler:
-- name: job
-  config:
-    schedule: "* * * * *"
-    http-method: GET
-  resource:
-    ref: service/web
-    path: /
-  
