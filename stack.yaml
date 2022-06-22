@@ -4,7 +4,7 @@ service:
 - name: web
   resources:
   - ref: redis/web-redis
-  - ref: cloudsql/web-sql
+
  
 router:
 - name: web-router
