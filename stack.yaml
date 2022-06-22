@@ -16,11 +16,6 @@ redis:
 - name: web-redis
   instance: 
     memory-size-gb: 4
-    
-cloudsql:
-- name: web-sql
-  version: POSTGRES_11
-  settings:
-    tier: db-f1-micro
+
   
   
