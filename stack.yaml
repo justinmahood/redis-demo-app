@@ -4,6 +4,10 @@ service:
 - name: web
   resources:
   - ref: redis/web-redis
+- name: preston
+  image: us-docker.pkg.dev/cloudrun/container/hello
+  resources:
+  - ref: redis/web-redis
 
  
 router:
